@@ -1,0 +1,7 @@
+com\bnpparibas\dsibddf\webapp\adaptors\IAdaptorDtoToCommand.class
+com\bnpparibas\dsibddf\webapp\RestSpringBootApplication.class
+com\bnpparibas\dsibddf\webapp\dto\DemandeCompteDTO.class
+com\bnpparibas\dsibddf\webapp\controller\Facade.class
+com\bnpparibas\dsibddf\webapp\dto\ReponseListeComptesDTO.class
+com\bnpparibas\dsibddf\webapp\adaptors\AdaptorDtoToCommand.class
+com\bnpparibas\dsibddf\webapp\dto\CompteDTO.class

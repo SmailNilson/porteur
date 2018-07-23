@@ -1,0 +1,5 @@
+com\bnpparibas\dsibddf\application\beans\ReponseCompte.class
+com\bnpparibas\dsibddf\application\beans\CommandDemandePorteur.class
+com\bnpparibas\dsibddf\application\services\impl\DemandeContextePorteurServiceImpl.class
+com\bnpparibas\dsibddf\application\services\IDemandeContextePorteurService.class
+com\bnpparibas\dsibddf\application\beans\ReponseContextePorteur.class
