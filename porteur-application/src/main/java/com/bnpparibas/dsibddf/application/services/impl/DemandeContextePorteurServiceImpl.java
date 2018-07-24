@@ -3,15 +3,15 @@
  */
 package com.bnpparibas.dsibddf.application.services.impl;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.bnpparibas.dsibddf.application.adaptors.GenerateAdaptorCommandAndEntity;
 import com.bnpparibas.dsibddf.application.beans.CommandDemandePorteur;
-import com.bnpparibas.dsibddf.application.beans.ReponseCompte;
 import com.bnpparibas.dsibddf.application.beans.ReponseContextePorteur;
 import com.bnpparibas.dsibddf.application.services.IDemandeContextePorteurService;
+import com.bnpparibas.dsibddf.domain.entity.DemandeContextePorteur;
+import com.bnpparibas.dsibddf.goal.Services.IContextePorteurGoal;
 
 /**
  * @author ADMINIBM
@@ -20,40 +20,22 @@ import com.bnpparibas.dsibddf.application.services.IDemandeContextePorteurServic
 @Service
 public class DemandeContextePorteurServiceImpl implements IDemandeContextePorteurService{
 
-	@Override
-	public String getTest() {		
-
-		return "yes i'm here";
-	}
+	@Autowired
+	private transient IContextePorteurGoal contxetePorteurGoalService;
 
 	@Override
 	public ReponseContextePorteur getContextePorteur(CommandDemandePorteur demandePorteur) {
+		
+		DemandeContextePorteur demandeContextePorteur = GenerateAdaptorCommandAndEntity.convertToDataIn(demandePorteur);
+		ReponseContextePorteur reponseContextePorteur = GenerateAdaptorCommandAndEntity.convertCommandToDTO(demandePorteur,contxetePorteurGoalService.callContextePorteurGoal(demandeContextePorteur));
 
-		return getModeBouchon(demandePorteur);
+		return reponseContextePorteur;
 	}
-	 /**
-     * Cette méthode va permettre de mis en place un bouchon qui remplace l'appel du goal
-     * 
-     * @param DemandeListeComptesIn
-     * @return ReponseListeComptes
-     */
-    private ReponseContextePorteur getModeBouchon(final CommandDemandePorteur dataIn) {
 
-        final List<ReponseCompte> comptes = new ArrayList<ReponseCompte>();
-        final ReponseCompte compte = new ReponseCompte();
-        // On renseigne l'identifiant du compte
-        for (int i = 0; i < 4; i++) {
-            compte.setNumeroCompte("123654789123456789451");
-            // On renseigne la devise du compte
-            compte.setLibelleCodeDevise("libelleType2Compte");
-            // On renseigne le solde du compte
-            compte.setSoldeCompte(15260.0);
-            compte.setPlafondCompte(9000.0);
-            compte.setMontantDepotMinimal(0);
-            compte.setLibelleCodeDevise("EUR");
-            comptes.add(compte);
-        }
-       return  new ReponseContextePorteur(dataIn.getPan(), dataIn.getIdAtm(), 1, "test mode bouchon", comptes);
-         
-    }
+	@Override
+	public String getTest() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	 
 }

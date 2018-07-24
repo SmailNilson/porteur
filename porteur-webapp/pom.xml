@@ -21,6 +21,12 @@
   <version>${project.version}</version>
   </dependency> 
   
+  		<dependency>
+			<groupId>com.bnpparibas.dsibddf.AP05568.porteur</groupId>
+			<artifactId>porteur-infarstructure</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+  
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>

@@ -40,7 +40,7 @@
     <module>porteur-webapp</module>
     <module>porteur-application</module>
     <module>porteur-domain</module>
-    <module>porteur-infarstructure</module>
+    <module>porteur-infrastructure</module>
   </modules>
   
   

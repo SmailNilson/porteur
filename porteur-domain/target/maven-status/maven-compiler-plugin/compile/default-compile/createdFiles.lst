@@ -1,0 +1,5 @@
+com\bnpparibas\dsibddf\domain\entity\ContextePorteur.class
+com\bnpparibas\dsibddf\domain\entity\Compte.class
+com\bnpparibas\dsibddf\goal\Services\IContextePorteurGoal.class
+com\bnpparibas\dsibddf\domain\entity\DemandeContextePorteur.class
+com\bnpparibas\dsibddf\domain\entity\Titulaire.class
